@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background: #9ec557;
+  width: 100%;
+
+  .header-logo {
+    padding: 4px;
+    font-family: "Arial";
+    font-weight: 600;
+    font-size: 30px;
+    color: white;
+  }
+}
