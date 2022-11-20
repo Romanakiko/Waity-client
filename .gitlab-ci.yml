@@ -1,5 +1,5 @@
 # The Docker image that will be used to build your app
-image: sha256:c71adfc6ec58be49213903598244ec644cf4e907b41b48610f722a4ff6e2c8f2
+image: node:16.4.2-bullseye
 # Functions that should be executed before the build script is run
 before_script:
   - npm ci
