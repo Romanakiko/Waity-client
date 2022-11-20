@@ -1,23 +1,16 @@
-image: node:latest
-
-# Pick zero or more services to be used on all builds.
-# Only needed when using a docker container to run your tests in.
-# Check out: https://docs.gitlab.com/ee/ci/services/index.html
-services:
-  - mysql:latest
-  - redis:latest
-  - postgres:latest
-
-# This folder is cached between builds
-# https://docs.gitlab.com/ee/ci/yaml/index.html#cache
-cache:
-  paths:
-    - node_modules/
-
-deploy:
-  stage: deploy
+# The Docker image that will be used to build your app
+image: sha256:c71adfc6ec58be49213903598244ec644cf4e907b41b48610f722a4ff6e2c8f2
+# Functions that should be executed before the build script is run
+before_script:
+  - npm ci
+pages:
   script:
-    - npm install
     - npm run build
-  environment: production
-
+  artifacts:
+    paths:
+      # The folder that contains the files to be exposed at the Page URL
+      - public
+  rules:
+    # This ensures that only pushes to the default branch will trigger
+    # a pages deploy
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
