@@ -1,0 +1,59 @@
+
+<img [src]="'https://e2.edimdoma.ru/data/posts/0002/0173/20173-ed4_wide.jpg?1495006926'" class="menu-card__image" (click)="toggleDescription()">
+
+<div class="menu-card-body" (click)="toggleDescription()">
+  <span class="menu-card-body__price">{{20 | currency: 'EUR'}}</span>
+
+  <span class="menu-card-body__name">{{'Great Dish'}}</span>
+
+  <div class="menu-card-body__properties">
+    <span class="menu-card-body__properties-weight">{{'300g'}}</span>
+    <span class="menu-card-body__properties-calories">{{'265cal'}}</span>
+  </div>
+
+</div>
+
+<div class="menu-card--add" >
+  <div *ngIf="multiplier===0" class="menu-card--add-basic" (click)="multiplierAdd(1)">
+    <i class="icon icon-plus"></i>
+    <span>{{'Add'}}</span>
+  </div>
+  <div *ngIf="!(multiplier===0)" class="menu-card--add-plusminus">
+    <i class="icon icon-minus" (click)="multiplierAdd(-1)"></i>
+    <span>{{multiplier}}</span>
+    <i class="icon icon-plus" (click)="multiplierAdd(1)"></i>
+  </div>
+</div>
+
+<div *ngIf="showDescription" class="menu-card-modal" (click)="toggleDescription()">
+  <div class="menu-card-modal-content">
+    <img [src]="'https://e2.edimdoma.ru/data/posts/0002/0173/20173-ed4_wide.jpg?1495006926'" class="menu-card__image">
+
+    <div class="menu-card-body">
+
+      <span class="menu-card-body__name">{{'Great Dish'}}</span>
+
+      <span class="menu-card-body__price">{{20 | currency: 'EUR'}}</span>
+
+      <span class="menu-card-body__description">{{'Grilled tuna steak, soft free range egg, French beans, anchovies, cherry tomatoes, baby gem, new potatoes, tapenade, mustard vinaigrette'}}</span>
+
+      <div class="menu-card-body__properties">
+        <span class="menu-card-body__properties-weight">{{'300g'}}</span>
+        <span class="menu-card-body__properties-calories">{{'265cal'}}</span>
+      </div>
+
+    </div>
+
+    <div class="menu-card--add" >
+      <div *ngIf="multiplier===0" class="menu-card--add-basic" (click)="multiplierAdd(1)">
+        <i class="icon icon-plus"></i>
+        <span>{{'Add'}}</span>
+      </div>
+      <div *ngIf="!(multiplier===0)" class="menu-card--add-plusminus">
+        <i class="icon icon-minus" (click)="multiplierAdd(-1)"></i>
+        <span>{{multiplier}}</span>
+        <i class="icon icon-plus" (click)="multiplierAdd(1)"></i>
+      </div>
+    </div>
+  </div>
+</div>
