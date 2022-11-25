@@ -7,9 +7,9 @@
     "start-dev": "ng serve",
     "build": "ng build --prod",
     "watch": "ng build --watch --configuration development",
-    "heroku-postbuild": "ng build --prod",
+    "heroku-postbuild": "ng build",
     "test": "ng test",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "ng build --aot"
   },
   "private": true,
   "dependencies": {
