@@ -3,9 +3,10 @@ image: node:latest
 # Functions that should be executed before the build script is run
 before_script:
   - npm ci
+  - npm run build
 pages:
   script:
-    - npm run build
+    - npm run start
   artifacts:
     paths:
       # The folder that contains the files to be exposed at the Page URL
