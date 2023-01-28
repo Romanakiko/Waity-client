@@ -5,6 +5,8 @@
   justify-content: flex-start;
   background: #9ec557;
   width: 100%;
+  position: fixed;
+  z-index: 300;
 
   .header-logo {
     padding: 4px;

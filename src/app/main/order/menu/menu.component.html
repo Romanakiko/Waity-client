@@ -1,14 +1,22 @@
 
 <div class="menu-header">
-  Header
+  <img [src]="'https://e2.edimdoma.ru/data/posts/0002/0173/20173-ed4_wide.jpg?1495006926'" class="menu-header__image">
+  <span class="menu-header__text">{{'Bistro Al Dente'}}</span>
 </div>
 
-<div class="menu-categories">
-  Categories
+<div class="menu--categories">
+  <div class="menu--categories-item" *ngFor="let category of ['Main dishes', 'Soup', 'Salads','Main dishes', 'Soup', 'Salads']">
+    <span class="menu--categories-item__text">{{category}}</span>
+  </div>
 </div>
 
-<div class="menu-items">
-  <app-menu-card ></app-menu-card>
-  <app-menu-card ></app-menu-card>
-  <app-menu-card ></app-menu-card>
+<div class="menu-category" *ngFor="let category of ['Main dishes', 'Soup', 'Salads']">
+  <span class="menu-category__name">{{category}}</span>
+  <div class="menu-category-items">
+    <app-menu-card ></app-menu-card>
+    <app-menu-card ></app-menu-card>
+    <app-menu-card ></app-menu-card>
+    <app-menu-card ></app-menu-card>
+    <app-menu-card ></app-menu-card>
+  </div>
 </div>
